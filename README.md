@@ -3,5 +3,6 @@
 Solutions to exercises from the book 'Études for Erlang'.
 
 ## Generate doc files
-`edoc:files(["<file_name>.erl"], [{dir: "doc"}]).`
-
+```erlang
+edoc:files(["<file_name>.erl"], [{dir: "doc"}]).
+```
