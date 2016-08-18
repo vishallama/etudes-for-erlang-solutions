@@ -4,14 +4,21 @@
 %% @version 0.1
 
 -module(geom).
--export([area/3]).
+-export([area/1]).
+
+%% @doc Calculates the area of a geometric shape, given a tuple containing
+%% a shape and two of its dimensions.
+%% Calls a private function.
+
+-spec(area({atom(), number(), number()}) -> number()).
+
+area({Shape, Dimension1, Dimension2}) ->
+  area(Shape, Dimension1, Dimension2).
 
 %% @doc Calculates the area of a geometric shape, given the shape and its
 %% two dimensions. For a rectangle shape, it returns the product of its
 %% arguments, for a triangle one half the product of its arguments, and for
 %% an ellipse math:pi() times the product of its arguments.
-
--spec(area(atom(), number(), number()) -> number()).
 
 area(rectangle, L, W) when L >=0, W >= 0 ->
   L * W;
