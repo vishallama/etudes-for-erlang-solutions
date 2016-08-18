@@ -15,11 +15,10 @@
 
 -spec(raise(number(), integer()) -> number()).
 
-raise(X, N) ->
-  if
-    N == 0 -> 1;
-    N == 1 -> X;
-    N > 0 -> X * raise(X, N-1);
-    N < 0 -> 1.0 / raise(X, -N)
-  end.
+raise(_, 0) -> 1;
+raise(X, N) when N < 0 -> 1.0 / raise(X, -N);
+raise(X, N) when N > 0 -> raise(X, N, 1).
+
+raise(_, 0, Accumulator) -> Accumulator;
+raise(X, N, Accumulator) -> raise(X, N-1, X * Accumulator).
 
