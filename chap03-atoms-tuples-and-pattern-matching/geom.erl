@@ -1,7 +1,22 @@
+%% @author Vishal Lama
+%% @doc Functions for calculating areas of geometric shapes.
+%% @copyright 2016 Vishal Lama
+%% @version 0.1
+
 -module(geom).
 -export([area/3]).
 
-area(rectangle, A, B) -> A * B;
-area(triangle, A, B) -> A * B / 2.0;
-area(ellipse, A, B) -> math:pi() * A * B.
+%% @doc Calculates the area of a geometric shape, given the shape and its
+%% two dimensions. For a rectangle shape, it returns the product of its
+%% arguments, for a triangle one half the product of its arguments, and for
+%% an ellipse math:pi() times the product of its arguments.
+
+-spec(area(atom(), number(), number()) -> number()).
+
+area(rectangle, L, W) when L >=0, W >= 0 ->
+  L * W;
+area(triangle, B, H) when B >=0, H >= 0 ->
+  B * H / 2.0;
+area(ellipse, A, B) when A >=0, B >= 0 ->
+  math:pi() * A * B.
 
