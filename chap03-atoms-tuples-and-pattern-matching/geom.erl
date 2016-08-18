@@ -18,5 +18,7 @@ area(rectangle, L, W) when L >=0, W >= 0 ->
 area(triangle, B, H) when B >=0, H >= 0 ->
   B * H / 2.0;
 area(ellipse, A, B) when A >=0, B >= 0 ->
-  math:pi() * A * B.
+  math:pi() * A * B;
+area(_, _, _) ->
+  0.
 
