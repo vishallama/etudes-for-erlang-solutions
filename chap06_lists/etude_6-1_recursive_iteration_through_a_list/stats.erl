@@ -9,6 +9,8 @@
 %% @doc Returns the mininum item in a list of numbers. Fails when given an
 %% empty list.
 
+-spec(mininum(list(number())) -> number()).
+
 mininum(List) -> mininum(List, hd(List)).
 
 mininum([], Current) ->
