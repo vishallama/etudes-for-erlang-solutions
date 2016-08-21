@@ -20,7 +20,7 @@ date_parts(DateStr) ->
   ].
 
 %% @doc Takes a string in ISO date format (yyyy-mm-dd) and returns the day
-%% of the year (Julian date.)
+%% of the year (Julian date).
 
 -spec(julian(string()) -> integer()).
 
